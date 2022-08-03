@@ -1,0 +1,24 @@
+.container{
+    
+    margin: 40px;
+    display: flex;
+    text-align: center;
+}
+
+
+.chess{
+    width: 120px;
+    height: 60px;
+
+    background-color: grey;
+    border: solid 1px black;
+}
+
+.red{
+    color:red;
+}
+
+.black {
+    color: black;
+}
+
