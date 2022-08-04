@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
+    <title>军旗裁判</title>
     <link rel="stylesheet" href="styles.css">
 
     <script>
@@ -17,6 +17,12 @@
             eles[i].addEventListener('click',(e)=>{
                e.target.classList.add("selected");
                console.log(e.target);
+
+                const eles = document.getElementsByClassName(e.target.classList[1]);
+                for (let i = 0; i < eles.length; i++) {
+                    eles[i].classList.add("hide");
+                }
+
             })
         }
      }
@@ -47,32 +53,32 @@
         console.log(red + "" + black);
 
         if(red == 0 || black == 0 || red ==black){
-            document.getElementById("result").innerHTML = "两个都消灭！！"
+            document.getElementById("result").innerHTML = "两个都消灭"
             return;
         }
 
         if(red == 1){
             if(black != 2){
-                document.getElementById("result").innerHTML = "两个都消灭！！"
+                document.getElementById("result").innerHTML = "两个都消灭"
                 return;
             }else{
-                document.getElementById("result").innerHTML = "黑方赢！！"
+                document.getElementById("result").innerHTML = "黑方赢"
                 return;
             }
         }
 
         if (black == 1) {
              if (red != 2) {
-                 document.getElementById("result").innerHTML = "两个都消灭！！"
+                 document.getElementById("result").innerHTML = "两个都消灭"
                  return;
              } else {
-                 document.getElementById("result").innerHTML = "红方赢！！"
+                 document.getElementById("result").innerHTML = "红方赢"
                  return;
              }
          }
 
         if(red == -1 || black == -1){
-            document.getElementById("result").innerHTML = "游戏结束！！"
+            document.getElementById("result").innerHTML = "游戏结束"
             return;
         }
 
@@ -92,38 +98,42 @@
 </head>
 
 <body onload="myFunction()">
+    <h1>军旗裁判</h1>
     <div class="container red">
-        <div class="chess">司令</div>
-        <div class="chess">军长</div>
-        <div class="chess">师长</div>
-        <div class="chess">旅长</div>
-        <div class="chess">团长</div>
-        <div class="chess">营长</div>
-        <div class="chess">连长</div>
-        <div class="chess">排长</div>
-        <div class="chess">工兵</div>
-        <div class="chess">地雷</div>
-        <div class="chess">炸弹</div>
-        <div class="chess">军旗</div>
+        <div class="chess redside">司令</div>
+        <div class="chess redside">军长</div>
+        <div class="chess redside">师长</div>
+        <div class="chess redside">旅长</div>
+        <div class="chess redside">团长</div>
+        <div class="chess redside">营长</div>
+        <div class="chess redside">连长</div>
+        <div class="chess redside">排长</div>
+        <div class="chess redside">工兵</div>
+        <div class="chess redside">地雷</div>
+        <div class="chess redside">炸弹</div>
+        <div class="chess redside">军旗</div>
     </div>
 
 
     <div class="container black">
-        <div class="chess">司令</div>
-        <div class="chess">军长</div>
-        <div class="chess">师长</div>
-        <div class="chess">旅长</div>
-        <div class="chess">团长</div>
-        <div class="chess">营长</div>
-        <div class="chess">连长</div>
-        <div class="chess">排长</div>
-        <div class="chess">工兵</div>
-        <div class="chess">地雷</div>
-        <div class="chess">炸弹</div>
-        <div class="chess">军旗</div>
+        <div class="chess blackside">司令</div>
+        <div class="chess blackside">军长</div>
+        <div class="chess blackside">师长</div>
+        <div class="chess blackside">旅长</div>
+        <div class="chess blackside">团长</div>
+        <div class="chess blackside">营长</div>
+        <div class="chess blackside">连长</div>
+        <div class="chess blackside">排长</div>
+        <div class="chess blackside">工兵</div>
+        <div class="chess blackside">地雷</div>
+        <div class="chess blackside">炸弹</div>
+        <div class="chess blackside">军旗</div>
     </div>
 
-    <button onclick="comparing()">submit result</button>
+    <div class="button">
+        <button onclick="comparing()">裁决</button>
+        <button onclick="location.reload()">刷新</button>
+    </div>
 
     <div id ="result"></div>
 </body>

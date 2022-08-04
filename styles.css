@@ -3,22 +3,47 @@
     margin: 40px;
     display: flex;
     text-align: center;
+   justify-content: center;
+   flex-wrap: wrap;
 }
 
+h1{
+    text-align: center;
+}
 
 .chess{
-    width: 120px;
-    height: 60px;
-
-    background-color: grey;
+    width: 100px;
+    height: 50px;
+    padding-top: 20px;
+    margin: auto 5px;
+    background-color: beige;
     border: solid 1px black;
+    border-radius: 10px;
+    
 }
+
 
 .red{
     color:red;
+    transform: rotate(180deg);
+}
+
+.hide{
+    background-color: lightblue;
+    color: lightblue;
 }
 
 .black {
     color: black;
 }
 
+#result{
+    font-family: Cursive;
+    text-align: center;
+    color: rgb(14, 77, 99);
+    font-size: 60px;
+}
+
+.button{
+    text-align: center;
+}
