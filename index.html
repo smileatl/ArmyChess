@@ -57,25 +57,37 @@
             return;
         }
 
-        if(red == 1){
-            if(black != 2){
+        if (red == 1) {
+            if (black >= 3 && black <= 10) {
+                document.getElementById("result").innerHTML = "红方赢"
+                return;
+            } else if (black == 2) {
+                document.getElementById("result").innerHTML = "黑方赢"
+                return;
+            } else if (black == 0) {
                 document.getElementById("result").innerHTML = "两个都消灭"
                 return;
-            }else{
-                document.getElementById("result").innerHTML = "黑方赢"
+            } else {
+                document.getElementById("result").innerHTML = "错误：军旗、地雷不可移动"
                 return;
             }
         }
 
         if (black == 1) {
-             if (red != 2) {
-                 document.getElementById("result").innerHTML = "两个都消灭"
-                 return;
-             } else {
-                 document.getElementById("result").innerHTML = "红方赢"
-                 return;
-             }
-         }
+            if (black >= 3 && black <= 10) {
+                document.getElementById("result").innerHTML = "黑方赢"
+                return;
+            } else if (red == 2) {
+                document.getElementById("result").innerHTML = "红方赢"
+                return;
+            } else if (red == 1) {
+                document.getElementById("result").innerHTML = "两个都消灭"
+                return;
+            } else {
+                document.getElementById("result").innerHTML = "错误：军旗、地雷不可移动"
+                return;
+            }
+        }
 
         if(red == -1 || black == -1){
             document.getElementById("result").innerHTML = "游戏结束"
