@@ -52,7 +52,7 @@
 
         console.log(red + "" + black);
 
-        if(red == 0 || black == 0 || red ==black){
+        if((red == 0 && black != -1) || (black == 0 && red != -1) || red ==black){
             document.getElementById("result").innerHTML = "两个都消灭"
             return;
         }
